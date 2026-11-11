@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c6acn4r2l3huj"]
+
+[sub_resource type="FontVariation" id="FontVariation_gjxql"]
+
+[node name="MainMenu" type="Control" unique_id=1257672003]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=454845133]
+layout_mode = 0
+offset_left = 409.0
+offset_right = 775.0
+offset_bottom = 354.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=735573206]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=808564097]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_gjxql")
+theme_override_font_sizes/font_size = 250
+text = "S.R"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1722992108]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "Start"
