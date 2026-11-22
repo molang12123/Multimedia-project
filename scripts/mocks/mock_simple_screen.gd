@@ -2,6 +2,8 @@ extends UIPort
 ## A-only placeholders for C's tutorial/settings/free-play screens.
 
 func _ready() -> void:
+	# Explicit UI registration makes navigation independent of scene_changed timing.
+	GameManager.bind_screen(self)
 	var title := "功能占位"
 	if GameState.current_state == GameState.Flow.TUTORIAL:
 		title = "新手教学（Mock）"
