@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/mocks/mock_song_select.gd" id="1"]
+
+[node name="SongSelect" type="Control"]
+script = ExtResource("1")
