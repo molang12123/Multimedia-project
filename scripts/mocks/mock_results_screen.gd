@@ -2,6 +2,8 @@ extends UIPort
 ## A-only temporary results scene.
 
 func _ready() -> void:
+	# Explicit UI registration makes navigation independent of scene_changed timing.
+	GameManager.bind_screen(self)
 	var column := MockUIHelper.make_page(self, "本局结算")
 	var r: Dictionary = GameState.current_result
 	MockUIHelper.add_label(column, "%s / %s" % [
