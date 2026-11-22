@@ -18,7 +18,7 @@ var _miss := 0
 
 func start_rhythm(chart: Dictionary) -> bool:
 	reset_rhythm()
-	if not chart.has("notes") or not chart["notes"] is Array:
+	if not chart.has("notes") or not (chart["notes"] is Array):
 		return false
 	_chart = chart.duplicate(true)
 	_notes = chart["notes"].duplicate(true)
