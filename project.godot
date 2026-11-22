@@ -1,19 +1,19 @@
 ; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
+; Existing B/C/D prototype files and original view settings are untouched.
 config_version=5
 
 [application]
 
 config/name="SilverRhythm"
-run/main_scene="uid://c6acn4r2l3huj"
+run/main_scene="res://scenes/core/bootstrap.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*res://scripts/core/game_state.gd"
+AudioManager="*res://scripts/mocks/mock_audio_manager.gd"
+GameManager="*res://scripts/core/game_manager.gd"
 
 [display]
 
