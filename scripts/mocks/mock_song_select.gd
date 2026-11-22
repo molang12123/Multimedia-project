@@ -7,6 +7,8 @@ var _difficulty_choice: OptionButton
 
 
 func _ready() -> void:
+	# Explicit UI registration makes navigation independent of scene_changed timing.
+	GameManager.bind_screen(self)
 	var column := MockUIHelper.make_page(self, "选择歌曲与难度")
 	_songs = AudioManager.get_song_catalog()
 	_song_choice = OptionButton.new()
