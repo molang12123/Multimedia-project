@@ -36,9 +36,16 @@ func _connect_if_present(scene: Node, event: StringName, handler: Callable) -> v
 
 
 func _on_scene_changed(scene: Node) -> void:
-	_changing_scene = false
-	if scene == null:
+	# Normal Godot scene lifecycle. Keep this for real C-owned UI scenes.
+	bind_screen(scene)
+
+
+func bind_screen(scene: Node) -> void:
+	# Mock UIs also call this from _ready, so their signals work even if
+	# scene_changed is delayed/missed during the Bootstrap -> Menu hop.
+	if not is_instance_valid(scene):
 		return
+	_changing_scene = false
 	_connect_if_present(scene, &"start_pressed", Callable(self, "open_song_select"))
 	_connect_if_present(scene, &"song_selected", Callable(self, "select_song"))
 	_connect_if_present(scene, &"restart_requested", Callable(self, "restart_game"))
