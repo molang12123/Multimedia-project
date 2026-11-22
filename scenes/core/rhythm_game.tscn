@@ -1,11 +1,12 @@
 [gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scripts/core/rhythm_game_controller.gd" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/mocks/mock_rhythm_playfield.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/mocks/mock_rhythm_hud.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/mocks/mock_pause_overlay.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/rhythm/rhythm_playfield.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rhythm_hud.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="4"]
 
 [node name="RhythmGameController" type="Control"]
+mouse_filter = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

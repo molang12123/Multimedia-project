@@ -1,5 +1,4 @@
 ; Engine configuration file.
-; Existing B/C/D prototype files and original view settings are untouched.
 config_version=5
 
 [application]
@@ -8,24 +7,30 @@ config/name="SilverRhythm"
 run/main_scene="res://scenes/core/bootstrap.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+config/quit_on_go_back=false
 
 [autoload]
 
 GameState="*res://scripts/core/game_state.gd"
-AudioManager="*res://scripts/mocks/mock_audio_manager.gd"
+AudioManager="*res://scripts/audio/audio_manager.gd"
 GameManager="*res://scripts/core/game_manager.gd"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=1280
-window/size/window_width_override=405
-window/size/window_height_override=720
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=960
+window/size/window_height_override=540
 window/stretch/mode="canvas_items"
+window/handheld/orientation=4
 
 [global]
 
 MainMenu.tscn=false
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

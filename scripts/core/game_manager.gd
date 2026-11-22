@@ -35,8 +35,10 @@ func _connect_if_present(scene: Node, event: StringName, handler: Callable) -> v
 		scene.connect(event, handler)
 
 
-func _on_scene_changed(scene: Node) -> void:
+func _on_scene_changed() -> void:
+	# SceneTree.scene_changed has no arguments (Godot 4.7); read the new scene from the tree
 	_changing_scene = false
+	var scene: Node = get_tree().current_scene
 	if scene == null:
 		return
 	_connect_if_present(scene, &"start_pressed", Callable(self, "open_song_select"))
